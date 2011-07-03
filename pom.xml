@@ -36,7 +36,7 @@
   <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
   <artifactId>doxia-module-textile</artifactId>
   <packaging>jar</packaging>
-  <url>https://github.com/viadee/viaRules-core</url>
+  <url>https://github.com/viadee/doxia-module-textile</url>
   <inceptionYear>2011</inceptionYear>
   <name>Doxia :: Textile module</name>
   <description>A Doxia module for Textile source documents</description>
@@ -46,8 +46,8 @@
   <!--                                  SOURCE                                 -->
   <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
   <scm>
-    <connection>scm:git:git://github.com/viadee/viaRules-core.git</connection>
-    <developerConnection>scm:git:git@github.com:viadee/viaRules-core.git</developerConnection>
+    <connection>scm:git:git://github.com/viadee/doxia-module-textile.git</connection>
+    <developerConnection>scm:git:git@github.com:viadee/doxia-module-textile.git</developerConnection>
     <tag>master</tag>
     <url>${project.url}</url>
   </scm>
