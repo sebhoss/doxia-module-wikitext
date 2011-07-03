@@ -38,7 +38,7 @@ import com.google.common.io.CharStreams;
  * Doxia parser for the Textile documents.
  * </p>
  * 
- * @author 				Sebastian Hoß (mail@shoss.de)
+ * @author 				Sebastian Hoß (sebastian.hoss@viadee.de)
  * @plexus.component 	role="org.apache.maven.doxia.parser.Parser" role-hint="textile"
  */
 public class TextileParser extends AbstractTextParser {

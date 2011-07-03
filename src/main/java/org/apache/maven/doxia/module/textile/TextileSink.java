@@ -29,7 +29,7 @@ import org.apache.maven.doxia.sink.AbstractTextSink;
  * Doxia sink for the Textile documents.
  * </p>
  * 
- * @author 				Sebastian Hoß (mail@shoss.de)
+ * @author 				Sebastian Hoß (sebastian.hoss@viadee.de)
  * @plexus.component 	role="org.apache.maven.doxia.sink.Sink" role-hint="textile"
  */
 public class TextileSink extends AbstractTextSink {

@@ -32,7 +32,7 @@ import org.apache.maven.doxia.sink.Sink;
  * Doxia sink factory for the Textile documents.
  * </p>
  * 
- * @author 				Sebastian Hoß (mail@shoss.de)
+ * @author 				Sebastian Hoß (sebastian.hoss@viadee.de)
  * @plexus.component 	role="org.apache.maven.doxia.sink.SinkFactory" role-hint="textile"
  */
 public class TextileSinkFactory extends AbstractTextSinkFactory {
