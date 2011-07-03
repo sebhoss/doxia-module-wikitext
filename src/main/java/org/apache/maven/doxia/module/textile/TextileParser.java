@@ -47,10 +47,8 @@ public class TextileParser extends AbstractTextParser {
 			String html = markupParser.parseToHtml(markupContent);
 			getLog().info("HTML content is: " + html);
 			
-			// Move HTML to sink for output
 			sink.rawText(html);
 			
-			// Flush the sink
 			sink.flush();
 		}
 		
