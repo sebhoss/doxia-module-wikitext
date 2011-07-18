@@ -35,6 +35,7 @@
   <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
   <!--                               INFORMATIONS                              -->
   <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+  <groupId>de.viadee.maven.doxia</groupId>
   <artifactId>doxia-module-textile</artifactId>
   <packaging>jar</packaging>
   <url>https://github.com/viadee/doxia-module-textile</url>
