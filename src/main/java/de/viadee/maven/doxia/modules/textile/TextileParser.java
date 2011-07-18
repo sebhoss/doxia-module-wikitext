@@ -31,6 +31,7 @@ import org.apache.maven.doxia.sink.Sink;
 import org.eclipse.mylyn.wikitext.core.parser.MarkupParser;
 import org.eclipse.mylyn.wikitext.textile.core.TextileLanguage;
 
+import com.google.common.base.Preconditions;
 import com.google.common.io.CharStreams;
 
 /**
@@ -38,27 +39,39 @@ import com.google.common.io.CharStreams;
  * Doxia parser for Textile documents.
  * </p>
  * 
- * @author 				Sebastian Hoß (sebastian.hoss@viadee.de)
+ * @author              Sebastian Hoß (sebastian.hoss@viadee.de)
  * @since               1.0.0
- * @plexus.component 	role="org.apache.maven.doxia.parser.Parser" role-hint="textile"
+ * @plexus.component    role="org.apache.maven.doxia.parser.Parser" role-hint="textile"
  */
-public class TextileParser extends AbstractTextParser {
+public final class TextileParser extends AbstractTextParser {
+
+    /**
+     * Constructor for a new Doxia Textile parser.
+     */
+    public TextileParser() {
+        // empty constructor to make Checkstyle happy.
+    }
 
     /**
      * {@inheritDoc}
      */
+    @SuppressWarnings("nls")
     @Override
     public void parse(final Reader reader, final Sink sink) throws ParseException {
-        this.getLog().info("Parsing Textile document.."); //$NON-NLS-1$
+        // Check Inputs
+        Preconditions.checkNotNull(reader);
+        Preconditions.checkNotNull(sink);
+
+        this.getLog().info("Parsing Textile document..");
 
         // Reading content of given markup
         String markupContent;
 
         try {
             markupContent = CharStreams.toString(reader);
-            this.getLog().info("Textile content is: " + markupContent); //$NON-NLS-1$
+            this.getLog().info("Textile content is: " + markupContent);
         } catch (final IOException exception) {
-            throw new ParseException("Cannot read input", exception); //$NON-NLS-1$
+            throw new ParseException("Cannot read input", exception);
         }
 
         // Parse given markup to HTML
@@ -67,7 +80,7 @@ public class TextileParser extends AbstractTextParser {
             markupParser.setMarkupLanguage(new TextileLanguage());
 
             final String html = markupParser.parseToHtml(markupContent);
-            this.getLog().info("HTML content is: " + html); //$NON-NLS-1$
+            this.getLog().info("HTML content is: " + html);
 
             sink.rawText(html);
 

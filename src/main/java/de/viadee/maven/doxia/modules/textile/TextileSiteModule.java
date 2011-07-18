@@ -30,17 +30,27 @@ import org.apache.maven.doxia.module.site.AbstractSiteModule;
  * <code>.textile</code> file extension.
  * </p>
  * 
- * @author 				Sebastian Hoß (sebastian.hoss@viadee.de)
+ * @author              Sebastian Hoß (sebastian.hoss@viadee.de)
  * @since               1.0.0
- * @plexus.component 	role="org.apache.maven.doxia.module.site.SiteModule" role-hint="textile"
+ * @plexus.component    role="org.apache.maven.doxia.module.site.SiteModule" role-hint="textile"
  */
 public class TextileSiteModule extends AbstractSiteModule {
+
+    /** Folder prefix for textile sources. */
+    @SuppressWarnings("nls")
+    private static final String SOURCE_DIRECTORY = "textile";
+
+    /** File extension for textile sources. */
+    private static final String FILE_EXTENSION   = TextileSiteModule.SOURCE_DIRECTORY;
+
+    /** ID of the textile parser. */
+    private static final String PARSER_ID        = TextileSiteModule.SOURCE_DIRECTORY;
 
     /**
      * Constructor for a new Maven site module, configured for textile sources.
      */
     public TextileSiteModule() {
-        super("textile", "textile", "textile"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+        super(TextileSiteModule.SOURCE_DIRECTORY, TextileSiteModule.FILE_EXTENSION, TextileSiteModule.PARSER_ID);
     }
 
 }
