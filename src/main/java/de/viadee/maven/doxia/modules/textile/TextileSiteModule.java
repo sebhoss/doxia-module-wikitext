@@ -31,6 +31,7 @@ import org.apache.maven.doxia.module.site.AbstractSiteModule;
  * </p>
  * 
  * @author 				Sebastian Hoß (sebastian.hoss@viadee.de)
+ * @since               1.0.0
  * @plexus.component 	role="org.apache.maven.doxia.module.site.SiteModule" role-hint="textile"
  */
 public class TextileSiteModule extends AbstractSiteModule {
