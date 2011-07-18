@@ -35,7 +35,7 @@ import com.google.common.io.CharStreams;
 
 /**
  * <p>
- * Doxia parser for the Textile documents.
+ * Doxia parser for Textile documents.
  * </p>
  * 
  * @author 				Sebastian Hoß (sebastian.hoss@viadee.de)

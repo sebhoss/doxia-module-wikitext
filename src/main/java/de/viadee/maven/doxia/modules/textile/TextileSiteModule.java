@@ -26,7 +26,8 @@ import org.apache.maven.doxia.module.site.AbstractSiteModule;
 
 /**
  * <p>
- * Doxia site module for Textile sources. All sources must be located under the <em>textile</em> folder and have an <code>.textile</code> file extension.
+ * Doxia site module for Textile sources. All sources must be located under the <em>textile</em> folder and have an
+ * <code>.textile</code> file extension.
  * </p>
  * 
  * @author 				Sebastian Hoß (sebastian.hoss@viadee.de)
