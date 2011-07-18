@@ -51,10 +51,6 @@ public class TextileParser extends AbstractTextParser {
     public void parse(final Reader reader, final Sink sink) throws ParseException {
         this.getLog().info("Parsing Textile document.."); //$NON-NLS-1$
 
-        // Creating parser for Textile language
-        final MarkupParser markupParser = new MarkupParser();
-        markupParser.setMarkupLanguage(new TextileLanguage());
-
         // Reading content of given markup
         String markupContent;
 
@@ -67,6 +63,9 @@ public class TextileParser extends AbstractTextParser {
 
         // Parse given markup to HTML
         if (markupContent != null && !markupContent.isEmpty()) {
+            final MarkupParser markupParser = new MarkupParser();
+            markupParser.setMarkupLanguage(new TextileLanguage());
+
             final String html = markupParser.parseToHtml(markupContent);
             this.getLog().info("HTML content is: " + html); //$NON-NLS-1$
 
