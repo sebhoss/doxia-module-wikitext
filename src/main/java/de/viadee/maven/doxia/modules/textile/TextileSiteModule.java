@@ -20,7 +20,7 @@
  * limitations under the License.
  *
  */
-package org.apache.maven.doxia.module.textile;
+package de.viadee.maven.doxia.modules.textile;
 
 import org.apache.maven.doxia.module.site.AbstractSiteModule;
 
@@ -33,9 +33,12 @@ import org.apache.maven.doxia.module.site.AbstractSiteModule;
  * @plexus.component 	role="org.apache.maven.doxia.module.site.SiteModule" role-hint="textile"
  */
 public class TextileSiteModule extends AbstractSiteModule {
-	
-	public TextileSiteModule() {
-		super("textile", "textile", "textile");
-	}
+
+    /**
+     * Constructor for a new Maven site module, configured for textile sources.
+     */
+    public TextileSiteModule() {
+        super("textile", "textile", "textile"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+    }
 
 }

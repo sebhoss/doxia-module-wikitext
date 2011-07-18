@@ -20,7 +20,7 @@
  * limitations under the License.
  *
  */
-package org.apache.maven.doxia.module.textile;
+package de.viadee.maven.doxia.modules.textile;
 
 import java.io.IOException;
 import java.io.Reader;
@@ -43,39 +43,39 @@ import com.google.common.io.CharStreams;
  */
 public class TextileParser extends AbstractTextParser {
 
-	/**
-	 * {@inheritDoc}
-	 */
-	@Override
-	public void parse(final Reader reader, final Sink sink) throws ParseException {
-		getLog().info("Parsing Textile document..");
-		
-		// Creating parser for Textile language
-		MarkupParser markupParser = new MarkupParser();
-		markupParser.setMarkupLanguage(new TextileLanguage());
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void parse(final Reader reader, final Sink sink) throws ParseException {
+        this.getLog().info("Parsing Textile document.."); //$NON-NLS-1$
 
-		// Reading content of given markup
-		String markupContent;
-		
-		try {
-			markupContent = CharStreams.toString(reader);
-			getLog().info("Textile content is: " + markupContent);
-		} catch (final IOException exception) {
-			throw new ParseException("Cannot read input", exception);
-		}
-		
-		// Parse given markup to HTML
-		if (markupContent != null && !markupContent.isEmpty()) {
-			String html = markupParser.parseToHtml(markupContent);
-			getLog().info("HTML content is: " + html);
-			
-			sink.rawText(html);
-			
-			sink.flush();
-		}
-		
-		// Finally close the sink.
-		sink.close();
-	}
+        // Creating parser for Textile language
+        final MarkupParser markupParser = new MarkupParser();
+        markupParser.setMarkupLanguage(new TextileLanguage());
+
+        // Reading content of given markup
+        String markupContent;
+
+        try {
+            markupContent = CharStreams.toString(reader);
+            this.getLog().info("Textile content is: " + markupContent); //$NON-NLS-1$
+        } catch (final IOException exception) {
+            throw new ParseException("Cannot read input", exception); //$NON-NLS-1$
+        }
+
+        // Parse given markup to HTML
+        if (markupContent != null && !markupContent.isEmpty()) {
+            final String html = markupParser.parseToHtml(markupContent);
+            this.getLog().info("HTML content is: " + html); //$NON-NLS-1$
+
+            sink.rawText(html);
+
+            sink.flush();
+        }
+
+        // Finally close the sink.
+        sink.close();
+    }
 
 }
