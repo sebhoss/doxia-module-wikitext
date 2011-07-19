@@ -69,7 +69,7 @@ public final class TextileParser extends AbstractTextParser {
 
         try {
             markupContent = CharStreams.toString(reader);
-            this.getLog().info("Textile content is: " + markupContent);
+            this.getLog().info("Textile content is: \n" + markupContent);
         } catch (final IOException exception) {
             throw new ParseException("Cannot read input", exception);
         }
@@ -80,7 +80,7 @@ public final class TextileParser extends AbstractTextParser {
             markupParser.setMarkupLanguage(new TextileLanguage());
 
             final String html = markupParser.parseToHtml(markupContent);
-            this.getLog().info("HTML content is: " + html);
+            this.getLog().info("HTML content is: \n" + html);
 
             sink.rawText(html);
 
