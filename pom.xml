@@ -66,24 +66,6 @@
 
 
   <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-  <!--                                DEVELOPERS                               -->
-  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-  <developers>
-    <developer>
-      <id>HoS</id>
-      <name>Sebastian Hoß</name>
-      <email>sebastian.hoss@viadee.de</email>
-      <organization>viadee IT Unternehmensberatung GmbH</organization>
-      <organizationUrl>http://www.viadee.de/</organizationUrl>
-      <roles>
-        <role>Developer</role>
-      </roles>
-      <timezone>1</timezone>
-    </developer>
-  </developers>
-
-
-  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
   <!--                               DEPENDENCIES                              -->
   <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
   <dependencies>
