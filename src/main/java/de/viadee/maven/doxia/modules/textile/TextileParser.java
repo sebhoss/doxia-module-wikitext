@@ -64,7 +64,7 @@ public final class TextileParser extends AbstractTextParser {
 
         this.getLog().info("Parsing Textile document..");
 
-        // Reading content of given markup
+        // Read content of given markup
         String markupContent;
 
         try {
