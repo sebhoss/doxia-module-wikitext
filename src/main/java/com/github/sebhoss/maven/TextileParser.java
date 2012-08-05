@@ -24,6 +24,7 @@ import com.google.common.io.CharStreams;
  * 
  * @plexus.component role="org.apache.maven.doxia.parser.Parser" role-hint="textile"
  */
+@SuppressWarnings("nls")
 public class TextileParser extends AbstractTextParser {
 
     /**
@@ -33,40 +34,59 @@ public class TextileParser extends AbstractTextParser {
         // empty constructor to make Checkstyle happy.
     }
 
-    @SuppressWarnings("nls")
     @Override
     public void parse(final Reader reader, final Sink sink) throws ParseException {
-        // Check Inputs
         Preconditions.checkNotNull(reader);
         Preconditions.checkNotNull(sink);
 
         this.getLog().info("Parsing Textile document..");
 
-        // Read content of given markup
-        String markupContent;
+        final String textileContent = readTextileContent(reader);
+        this.getLog().info("Textile content is: \n" + textileContent);
 
+        final String htmlContent = parseToHtml(textileContent);
+        this.getLog().info("HTML content is: \n" + htmlContent);
+
+        sink.rawText(htmlContent);
+        sink.flush();
+        sink.close();
+    }
+
+    /**
+     * @param reader
+     * @return
+     * @throws ParseException
+     */
+    private static String readTextileContent(final Reader reader) throws ParseException {
         try {
-            markupContent = CharStreams.toString(reader);
-            this.getLog().info("Textile content is: \n" + markupContent);
+            return CharStreams.toString(reader);
         } catch (final IOException exception) {
             throw new ParseException("Cannot read input", exception);
         }
+    }
 
-        // Parse given markup to HTML
+    /**
+     * @param markupContent
+     * @return
+     */
+    private static String parseToHtml(final String markupContent) {
         if (markupContent != null && !markupContent.isEmpty()) {
-            final MarkupParser markupParser = new MarkupParser();
-            markupParser.setMarkupLanguage(new TextileLanguage());
+            final MarkupParser markupParser = createMarkupParser();
 
-            final String html = markupParser.parseToHtml(markupContent);
-            this.getLog().info("HTML content is: \n" + html);
-
-            sink.rawText(html);
-
-            sink.flush();
+            return markupParser.parseToHtml(markupContent);
         }
 
-        // Finally close the sink.
-        sink.close();
+        throw new IllegalArgumentException("Cannot parse empty Textile content to HTML!");
+    }
+
+    /**
+     * @return
+     */
+    private static MarkupParser createMarkupParser() {
+        final MarkupParser markupParser = new MarkupParser();
+        markupParser.setMarkupLanguage(new TextileLanguage());
+
+        return markupParser;
     }
 
 }
