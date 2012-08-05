@@ -1,0 +1,37 @@
+/* This program is free software. It comes without any warranty, to
+ * the extent permitted by applicable law. You can redistribute it
+ * and/or modify it under the terms of the Do What The Fuck You Want
+ * To Public License, Version 2, as published by Sam Hocevar. See
+ * http://sam.zoy.org/wtfpl/COPYING for more details. */
+package com.github.sebhoss.maven;
+
+import org.apache.maven.doxia.module.site.AbstractSiteModule;
+
+/**
+ * <p>
+ * Doxia site module for Textile sources. All sources must be located under the <em>textile</em> folder and have an
+ * <code>.textile</code> file extension.
+ * </p>
+ * 
+ * @plexus.component role="org.apache.maven.doxia.module.site.SiteModule" role-hint="textile"
+ */
+public class TextileSiteModule extends AbstractSiteModule {
+
+    /** Folder prefix for textile sources. */
+    @SuppressWarnings("nls")
+    public static final String SOURCE_DIRECTORY = "textile";
+
+    /** File extension for textile sources. */
+    public static final String FILE_EXTENSION   = TextileSiteModule.SOURCE_DIRECTORY;
+
+    /** ID of the textile parser. */
+    public static final String PARSER_ID        = TextileSiteModule.SOURCE_DIRECTORY;
+
+    /**
+     * Constructor for a new Maven site module, configured for textile sources.
+     */
+    public TextileSiteModule() {
+        super(TextileSiteModule.SOURCE_DIRECTORY, TextileSiteModule.FILE_EXTENSION, TextileSiteModule.PARSER_ID);
+    }
+
+}
