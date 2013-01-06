@@ -32,7 +32,7 @@
   <url>https://github.com/sebhoss/doxia-module-textile</url>
   <inceptionYear>2012</inceptionYear>
   <name>Doxia :: Textile module</name>
-  <description>A Doxia module for Textile source documents</description>
+  <description>Doxia module for Textile source documents</description>
 
   <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
   <!--                                  SOURCE                                 -->
