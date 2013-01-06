@@ -3,7 +3,7 @@
  * and/or modify it under the terms of the Do What The Fuck You Want
  * To Public License, Version 2, as published by Sam Hocevar. See
  * http://sam.zoy.org/wtfpl/COPYING for more details. */
-package com.github.sebhoss.maven;
+package com.github.sebhoss.doxia;
 
 import java.io.IOException;
 import java.io.Reader;
@@ -36,27 +36,17 @@ public class TextileParser extends AbstractTextParser {
 
     @Override
     public void parse(final Reader reader, final Sink sink) throws ParseException {
-        Preconditions.checkNotNull(reader);
-        Preconditions.checkNotNull(sink);
+        Preconditions.checkNotNull(reader, "Cannot read from NULL reader");
+        Preconditions.checkNotNull(sink, "Cannot write into NULL sink");
 
-        this.getLog().info("Parsing Textile document..");
-
-        final String textileContent = readTextileContent(reader);
-        this.getLog().info("Textile content is: \n" + textileContent);
-
-        final String htmlContent = parseToHtml(textileContent);
-        this.getLog().info("HTML content is: \n" + htmlContent);
+        final String textileContent = TextileParser.readTextileContent(reader);
+        final String htmlContent = TextileParser.parseToHtml(textileContent);
 
         sink.rawText(htmlContent);
         sink.flush();
         sink.close();
     }
 
-    /**
-     * @param reader
-     * @return
-     * @throws ParseException
-     */
     private static String readTextileContent(final Reader reader) throws ParseException {
         try {
             return CharStreams.toString(reader);
@@ -65,13 +55,9 @@ public class TextileParser extends AbstractTextParser {
         }
     }
 
-    /**
-     * @param markupContent
-     * @return
-     */
     private static String parseToHtml(final String markupContent) {
         if (markupContent != null && !markupContent.isEmpty()) {
-            final MarkupParser markupParser = createMarkupParser();
+            final MarkupParser markupParser = TextileParser.createMarkupParser();
 
             return markupParser.parseToHtml(markupContent);
         }
@@ -79,9 +65,6 @@ public class TextileParser extends AbstractTextParser {
         throw new IllegalArgumentException("Cannot parse empty Textile content to HTML!");
     }
 
-    /**
-     * @return
-     */
     private static MarkupParser createMarkupParser() {
         final MarkupParser markupParser = new MarkupParser();
         markupParser.setMarkupLanguage(new TextileLanguage());

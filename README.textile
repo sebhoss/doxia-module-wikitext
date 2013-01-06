@@ -12,7 +12,7 @@ bc.
   <artifactId>maven-site-plugin</artifactId>
   <dependencies>
     <dependency>
-      <groupId>com.github.sebhoss.maven</groupId>
+      <groupId>com.github.sebhoss.doxia</groupId>
       <artifactId>doxia-module-textile</artifactId>
       <version>1.0.0</version>
     </dependency>

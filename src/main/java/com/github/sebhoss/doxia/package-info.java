@@ -8,5 +8,5 @@
  *
  * @see     <a href="https://github.com/sebhoss/doxia-module-textile">https://github.com/sebhoss/doxia-module-textile</a>
  */
-package com.github.sebhoss.maven;
+package com.github.sebhoss.doxia;
 
