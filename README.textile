@@ -1,6 +1,6 @@
 h1. Doxia Textile module
 
-p. This "Doxia":http://maven.apache.org/doxia/ module enables you to write documentation using the "Textile":http://textile.thresholdstate.com/ syntax. It is based on the "Mylyn/WikiText":http://wiki.eclipse.org/Mylyn/WikiText project which also provides a nice editor with syntax completion, folding, validation, outline view and a preview of what the HTML output looks like.
+p. This "Doxia":http://maven.apache.org/doxia/ module enables you to write documentation using the "Textile":http://txstyle.org/ syntax. It is based on the "Mylyn/WikiText":http://wiki.eclipse.org/Mylyn/WikiText project which also provides a nice editor with syntax completion, folding, validation, outline view and a preview of what the HTML output looks like.
 
 h2. Usage
 
@@ -14,7 +14,7 @@ bc.
     <dependency>
       <groupId>com.github.sebhoss.doxia</groupId>
       <artifactId>doxia-module-textile</artifactId>
-      <version>1.0.0</version>
+      <version>1.0.0-SNAPSHOT</version>
     </dependency>
   </dependencies>
 </plugin>
@@ -25,11 +25,11 @@ h2. Development
 
 h3. License
 
-p. This program is free software. It comes without any warranty, to the extent permitted by applicable law. You can redistribute it and/or modify it under the terms of the Do What The Fuck You Want To Public License, Version 2, as published by Sam Hocevar. See "http://sam.zoy.org/wtfpl/COPYING":http://sam.zoy.org/wtfpl/COPYING for more details.
+p. This program is free software. It comes without any warranty, to the extent permitted by applicable law. You can redistribute it and/or modify it under the terms of the Do What The Fuck You Want To Public License, Version 2, as published by Sam Hocevar. See COPYING or "http://www.wtfpl.net/":http://www.wtfpl.net/ for more details.
 
 h3. Setup
 
-p. This project is using "Maven":http://maven.apache.org/, "Eclipse":http://eclipse.org/ and "Git":http://git-scm.com/ as the main development tools. To build the project yourself just download & install at least Maven 3.0 and call *mvn install* inside the project folder. Maven should then proceed to clean, build, package and install the doxia module.
+p. This projects uses "Java":http://www.java.com/, "Maven":http://maven.apache.org/ and "Git":http://git-scm.com/ as the main development tools. To build the project yourself just download & install at least Maven 3.0 and call *mvn install* inside the project folder. Maven should then proceed to clean, build, package and install this project.
 
 h3. Versioning
 

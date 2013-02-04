@@ -2,7 +2,7 @@
  * the extent permitted by applicable law. You can redistribute it
  * and/or modify it under the terms of the Do What The Fuck You Want
  * To Public License, Version 2, as published by Sam Hocevar. See
- * http://sam.zoy.org/wtfpl/COPYING for more details. */
+ * http://www.wtfpl.net/ for more details. */
 package com.github.sebhoss.doxia;
 
 import javax.inject.Inject;
@@ -12,7 +12,7 @@ import org.apache.maven.doxia.module.site.AbstractSiteModule;
 /**
  * <p>
  * Doxia site module for Textile sources. All sources must be located under the <em>textile</em> folder and have an
- * <code>.textile</code> file extension.
+ * <code>textile</code> file extension.
  * </p>
  * 
  * @plexus.component role="org.apache.maven.doxia.module.site.SiteModule" role-hint="textile"

@@ -2,7 +2,7 @@
  * the extent permitted by applicable law. You can redistribute it
  * and/or modify it under the terms of the Do What The Fuck You Want
  * To Public License, Version 2, as published by Sam Hocevar. See
- * http://sam.zoy.org/wtfpl/COPYING for more details. */
+ * http://www.wtfpl.net/ for more details. */
 package com.github.sebhoss.doxia;
 
 import java.io.IOException;
@@ -56,13 +56,12 @@ public class TextileParser extends AbstractTextParser {
     }
 
     private static String parseToHtml(final String markupContent) {
-        if (markupContent != null && !markupContent.isEmpty()) {
-            final MarkupParser markupParser = TextileParser.createMarkupParser();
-
-            return markupParser.parseToHtml(markupContent);
-        }
-
-        throw new IllegalArgumentException("Cannot parse empty Textile content to HTML!");
+    	Preconditions.checkNotNull(markupContent, "Cannot parse NULL Textile content to HTML!");
+    	Preconditions.checkArgument(!markupContent.isEmpty(), "Cannot parse empty Textile content to HTML!");
+    	
+        final MarkupParser markupParser = TextileParser.createMarkupParser();
+        
+        return markupParser.parseToHtml(markupContent);
     }
 
     private static MarkupParser createMarkupParser() {
