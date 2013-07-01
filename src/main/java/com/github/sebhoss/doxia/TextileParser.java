@@ -48,19 +48,19 @@ public class TextileParser extends AbstractTextParser {
     }
 
     private static String readTextileContent(final Reader reader) throws ParseException {
-        try {
-            return CharStreams.toString(reader);
+        try (Reader autoClosedReader = reader) {
+            return CharStreams.toString(autoClosedReader);
         } catch (final IOException exception) {
             throw new ParseException("Cannot read input", exception);
         }
     }
 
     private static String parseToHtml(final String markupContent) {
-    	Preconditions.checkNotNull(markupContent, "Cannot parse NULL Textile content to HTML!");
-    	Preconditions.checkArgument(!markupContent.isEmpty(), "Cannot parse empty Textile content to HTML!");
-    	
+        Preconditions.checkNotNull(markupContent, "Cannot parse NULL Textile content to HTML!");
+        Preconditions.checkArgument(!markupContent.isEmpty(), "Cannot parse empty Textile content to HTML!");
+
         final MarkupParser markupParser = TextileParser.createMarkupParser();
-        
+
         return markupParser.parseToHtml(markupContent);
     }
 
