@@ -30,7 +30,7 @@
   <packaging>jar</packaging>
   <url>https://github.com/sebhoss/doxia-module-textile</url>
   <inceptionYear>2012</inceptionYear>
-  <name>Doxia :: Textile module</name>
+  <name>Doxia :: Textile Module</name>
   <description>Doxia module for Textile source documents</description>
 
   <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
