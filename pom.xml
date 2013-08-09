@@ -26,7 +26,7 @@
   <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
   <groupId>com.github.sebhoss.doxia</groupId>
   <artifactId>doxia-module-textile</artifactId>
-  <version>1.0.1</version>
+  <version>1.0.2-SNAPSHOT</version>
   <packaging>jar</packaging>
   <url>https://github.com/sebhoss/doxia-module-textile</url>
   <inceptionYear>2012</inceptionYear>
