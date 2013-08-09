@@ -19,7 +19,7 @@ bc.
   </dependencies>
 </plugin>
 
-p. All Textile source documents with the file extension *textile* living under *src/site/textile/* will be parsed and converted to HTML.
+p. All Textile source documents with the file extension *textile* living under *src/site/textile/* will be parsed and converted to HTML. Have a look at the "example project":https://github.com/sebhoss/doxia-textile-sample.
 
 h2. Development
 
