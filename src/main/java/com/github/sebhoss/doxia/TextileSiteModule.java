@@ -10,15 +10,16 @@ package com.github.sebhoss.doxia;
 import javax.inject.Inject;
 
 import org.apache.maven.doxia.module.site.AbstractSiteModule;
+import org.apache.maven.doxia.module.site.SiteModule;
+import org.codehaus.plexus.component.annotations.Component;
 
 /**
  * <p>
  * Doxia site module for Textile sources. All sources must be located under the <em>textile</em> folder and have an
  * <code>textile</code> file extension.
  * </p>
- * 
- * @plexus.component role="org.apache.maven.doxia.module.site.SiteModule" role-hint="textile"
  */
+@Component( role = SiteModule.class, hint = "textile" )
 public class TextileSiteModule extends AbstractSiteModule {
 
     /** Folder prefix for textile sources. */

@@ -12,7 +12,9 @@ import java.io.Reader;
 
 import org.apache.maven.doxia.parser.AbstractTextParser;
 import org.apache.maven.doxia.parser.ParseException;
+import org.apache.maven.doxia.parser.Parser;
 import org.apache.maven.doxia.sink.Sink;
+import org.codehaus.plexus.component.annotations.Component;
 import org.eclipse.mylyn.wikitext.core.parser.MarkupParser;
 import org.eclipse.mylyn.wikitext.textile.core.TextileLanguage;
 
@@ -23,10 +25,9 @@ import com.google.common.io.CharStreams;
  * <p>
  * Doxia parser for Textile documents.
  * </p>
- * 
- * @plexus.component role="org.apache.maven.doxia.parser.Parser" role-hint="textile"
  */
 @SuppressWarnings("nls")
+@Component(role = Parser.class, hint = "textile")
 public class TextileParser extends AbstractTextParser {
 
     /**
