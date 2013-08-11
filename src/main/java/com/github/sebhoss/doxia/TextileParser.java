@@ -22,9 +22,7 @@ import com.google.common.base.Preconditions;
 import com.google.common.io.CharStreams;
 
 /**
- * <p>
  * Doxia parser for Textile documents.
- * </p>
  */
 @SuppressWarnings("nls")
 @Component(role = Parser.class, hint = "textile")
