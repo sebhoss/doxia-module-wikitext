@@ -15,6 +15,8 @@ import org.apache.maven.doxia.sink.SinkEventAttributes;
 
 /**
  * Textile generator.
+ * 
+ * @see <a href="http://www.txstyle.org/">txtstyle.org</a>
  */
 @SuppressWarnings("nls")
 public class TextileSink extends AbstractTextSink {
@@ -131,11 +133,8 @@ public class TextileSink extends AbstractTextSink {
     // Links and Images
 
     @Override
-    public void anchor(final String name, final SinkEventAttributes attributes) {
-        final Object titleValue = attributes.getAttribute(SinkEventAttributes.TITLE);
-        final String title = titleValue == null ? "" : "(" + titleValue + ")";
-
-        write(name + title + ":");
+    public void link(final String name, final SinkEventAttributes attributes) {
+        // nop
     }
 
     // Basics
@@ -143,6 +142,21 @@ public class TextileSink extends AbstractTextSink {
     @Override
     public void text(final String text) {
         write(text);
+    }
+
+    @Override
+    public void rawText(final String text) {
+        write(text);
+    }
+
+    @Override
+    public void lineBreak() {
+        write(EOL);
+    }
+
+    @Override
+    public void unknown(final String name, final Object[] requiredParams, final SinkEventAttributes attributes) {
+        getLog().warn("[Textile Sink] Unknown Sink event: '" + name + "', ignoring!");
     }
 
     // Writer specific
