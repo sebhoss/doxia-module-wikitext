@@ -11,6 +11,7 @@ import java.io.PrintWriter;
 import java.io.Writer;
 
 import org.apache.maven.doxia.sink.AbstractTextSink;
+import org.apache.maven.doxia.sink.SinkEventAttributes;
 
 /**
  * Textile generator.
@@ -27,6 +28,8 @@ public class TextileSink extends AbstractTextSink {
     public TextileSink(final Writer writer) {
         this.writer = new PrintWriter(writer);
     }
+
+    // Block modifiers
 
     @Override
     public void sectionTitle1() {
@@ -88,6 +91,11 @@ public class TextileSink extends AbstractTextSink {
         write(EOL);
     }
 
+    @Override
+    public void comment(final String comment) {
+        write("###." + comment + EOL);
+    }
+
     // Phrase modifiers
 
     @Override
@@ -119,6 +127,37 @@ public class TextileSink extends AbstractTextSink {
     public void monospaced_() {
         write("@");
     }
+
+    // Links and Images
+
+    @Override
+    public void anchor(final String name, final SinkEventAttributes attributes) {
+        final Object titleValue = attributes.getAttribute(SinkEventAttributes.TITLE);
+        final String title = titleValue == null ? "" : "(" + titleValue + ")";
+
+        write(name + title + ":");
+    }
+
+    // Basics
+
+    @Override
+    public void text(final String text) {
+        write(text);
+    }
+
+    // Writer specific
+
+    @Override
+    public void flush() {
+        writer.flush();
+    }
+
+    @Override
+    public void close() {
+        writer.close();
+    }
+
+    // Helpers
 
     private void write(final String text) {
         writer.write(unifyEOLs(text));
