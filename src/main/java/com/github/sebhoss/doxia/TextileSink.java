@@ -35,7 +35,7 @@ public class TextileSink extends AbstractTextSink {
 
     @Override
     public void sectionTitle1() {
-        write("h1.");
+        write("h1. ");
     }
 
     @Override
@@ -45,7 +45,7 @@ public class TextileSink extends AbstractTextSink {
 
     @Override
     public void sectionTitle2() {
-        write("h2.");
+        write("h2. ");
     }
 
     @Override
@@ -55,7 +55,7 @@ public class TextileSink extends AbstractTextSink {
 
     @Override
     public void sectionTitle3() {
-        write("h3.");
+        write("h3. ");
     }
 
     @Override
@@ -65,7 +65,7 @@ public class TextileSink extends AbstractTextSink {
 
     @Override
     public void sectionTitle4() {
-        write("h4.");
+        write("h4. ");
     }
 
     @Override
@@ -75,7 +75,7 @@ public class TextileSink extends AbstractTextSink {
 
     @Override
     public void sectionTitle5() {
-        write("h5.");
+        write("h5. ");
     }
 
     @Override
@@ -85,7 +85,7 @@ public class TextileSink extends AbstractTextSink {
 
     @Override
     public void paragraph() {
-        write("p.");
+        write("p. ");
     }
 
     @Override
