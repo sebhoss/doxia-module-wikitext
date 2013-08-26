@@ -98,6 +98,16 @@ public class TextileSink extends AbstractTextSink {
         write("###." + comment + EOL);
     }
 
+    @Override
+    public void verbatim(final boolean boxed) {
+        write("bc. ");
+    }
+
+    @Override
+    public void verbatim_() {
+        write(EOL);
+    }
+
     // Phrase modifiers
 
     @Override
