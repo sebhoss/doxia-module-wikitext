@@ -95,12 +95,16 @@ public class TextileSink extends AbstractTextSink {
 
     @Override
     public void comment(final String comment) {
-        write("###." + comment + EOL);
+        write("###. " + comment + EOL);
     }
 
     @Override
     public void verbatim(final boolean boxed) {
-        write("bc. ");
+        if (boxed) {
+            write("bc. ");
+        } else {
+            write("pre. ");
+        }
     }
 
     @Override
@@ -140,11 +144,43 @@ public class TextileSink extends AbstractTextSink {
         write("@");
     }
 
+    // Lists
+
+    @Override
+    public void definitionList() {
+        write("- ");
+    }
+
+    @Override
+    public void definitionList_() {
+        write(EOL);
+    }
+
+    @Override
+    public void definedTerm_() {
+        write(" ");
+    }
+
+    @Override
+    public void definition() {
+        write(":= ");
+    }
+
+    @Override
+    public void definition_() {
+        write(" =:" + EOL);
+    }
+
     // Links and Images
 
     @Override
-    public void link(final String name, final SinkEventAttributes attributes) {
-        // nop
+    public void link(final String name) {
+        write("\"" + name + "\":" + name);
+    }
+
+    @Override
+    public void anchor(final String name) {
+        write("\"" + name + "\":" + name);
     }
 
     // Basics
