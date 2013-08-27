@@ -193,6 +193,21 @@ public class TextileSink extends AbstractTextSink {
         write("!");
     }
 
+    @Override
+    public void figureCaption() {
+        write("(");
+    }
+
+    @Override
+    public void figureCaption_() {
+        write(")");
+    }
+
+    @Override
+    public void figureGraphics(final String name) {
+        write(name);
+    }
+
     // Basics
 
     @Override

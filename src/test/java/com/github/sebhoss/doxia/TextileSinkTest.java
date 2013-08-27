@@ -324,6 +324,43 @@ public class TextileSinkTest {
     }
 
     /**
+     * Ensures that the sink supports {@link Sink#figureGraphics(String)}.
+     */
+    @Test
+    public void shouldSupportFigureGraphics() {
+        // given
+        final TextileSink sink = new TextileSink(writer);
+
+        // when
+        sink.figure();
+        sink.figureGraphics("/img/carver.jpeg");
+        sink.figure_();
+
+        // then
+        Assert.assertEquals("!/img/carver.jpeg!", writer.toString());
+    }
+
+    /**
+     * Ensures that the sink supports {@link Sink#figureCaption()}.
+     */
+    @Test
+    public void shouldSupportFigureCaption() {
+        // given
+        final TextileSink sink = new TextileSink(writer);
+
+        // when
+        sink.figure();
+        sink.figureGraphics("/img/carver.jpeg");
+        sink.figureCaption();
+        sink.text("caption");
+        sink.figureCaption_();
+        sink.figure_();
+
+        // then
+        Assert.assertEquals("!/img/carver.jpeg(caption)!", writer.toString());
+    }
+
+    /**
      * Ensures that the sink supports {@link Sink#definitionList()}.
      */
     @Test
