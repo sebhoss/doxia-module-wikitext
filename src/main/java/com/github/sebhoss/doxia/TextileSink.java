@@ -217,7 +217,7 @@ public class TextileSink extends AbstractTextSink {
 
     @Override
     public void rawText(final String text) {
-        write(text);
+        write("notextile. " + text);
     }
 
     @Override

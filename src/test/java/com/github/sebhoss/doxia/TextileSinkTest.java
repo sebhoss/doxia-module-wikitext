@@ -258,7 +258,7 @@ public class TextileSinkTest {
         sink.rawText("text");
 
         // then
-        Assert.assertEquals("text", writer.toString());
+        Assert.assertEquals("notextile. text", writer.toString());
     }
 
     /**
