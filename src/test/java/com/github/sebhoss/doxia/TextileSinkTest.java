@@ -225,7 +225,7 @@ public class TextileSinkTest {
         // when
         sink.monospaced();
         sink.text("text");
-        sink.monospaced();
+        sink.monospaced_();
 
         // then
         Assert.assertEquals("@text@", writer.toString());
@@ -304,6 +304,23 @@ public class TextileSinkTest {
 
         // then
         Assert.assertEquals("\"url\":url", writer.toString());
+    }
+
+    /**
+     * Ensures that the sink supports {@link Sink#figure()}.
+     */
+    @Test
+    public void shouldSupportFigure() {
+        // given
+        final TextileSink sink = new TextileSink(writer);
+
+        // when
+        sink.figure();
+        sink.text("/img/carver.jpeg");
+        sink.figure_();
+
+        // then
+        Assert.assertEquals("!/img/carver.jpeg!", writer.toString());
     }
 
     /**
