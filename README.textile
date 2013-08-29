@@ -14,7 +14,7 @@ bc.
     <dependency>
       <groupId>com.github.sebhoss</groupId>
       <artifactId>doxia-module-textile</artifactId>
-      <version>1.0.1</version>
+      <version>1.1.0</version>
     </dependency>
   </dependencies>
 </plugin>
