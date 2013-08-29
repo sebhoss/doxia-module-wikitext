@@ -49,7 +49,7 @@
       <dependency>
         <groupId>com.github.sebhoss</groupId>
         <artifactId>java-bom</artifactId>
-        <version>1.0.2-SNAPSHOT</version>
+        <version>1.0.2</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
