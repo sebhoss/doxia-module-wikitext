@@ -207,6 +207,43 @@ public class TextileSink extends AbstractTextSink {
         write(name);
     }
 
+    // Tables
+
+    @Override
+    public void table() {
+        write("|");
+    }
+
+    @Override
+    public void table_() {
+        write(EOL);
+    }
+
+    @Override
+    public void tableHeaderCell() {
+        write("_. ");
+    }
+
+    @Override
+    public void tableHeaderCell_() {
+        write(" |");
+    }
+
+    @Override
+    public void tableRow() {
+        write(EOL + "|");
+    }
+
+    @Override
+    public void tableCell() {
+        write(" ");
+    }
+
+    @Override
+    public void tableCell_() {
+        write(" |");
+    }
+
     // Basics
 
     @Override

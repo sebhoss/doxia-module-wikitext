@@ -382,4 +382,47 @@ public class TextileSinkTest {
                 writer.toString());
     }
 
+    /**
+     * Ensures that the sink supports {@link Sink#table()}.
+     */
+    @Test
+    public void shouldSupportTable() {
+        // given
+        final TextileSink sink = new TextileSink(writer);
+
+        // when
+        sink.table();
+        sink.tableHeaderCell();
+        sink.text("Header1");
+        sink.tableHeaderCell_();
+        sink.table_();
+
+        // then
+        Assert.assertEquals("|_. Header1 |" + Markup.EOL, writer.toString());
+    }
+
+    /**
+     * Ensures that the sink supports {@link Sink#table()}.
+     */
+    @Test
+    public void shouldSupportTableWithRows() {
+        // given
+        final TextileSink sink = new TextileSink(writer);
+
+        // when
+        sink.table();
+        sink.tableHeaderCell();
+        sink.text("Header1");
+        sink.tableHeaderCell_();
+        sink.tableRow();
+        sink.tableCell();
+        sink.text("Cell1");
+        sink.tableCell_();
+        sink.tableRow_();
+        sink.table_();
+
+        // then
+        Assert.assertEquals("|_. Header1 |" + Markup.EOL + "| Cell1 |" + Markup.EOL, writer.toString());
+    }
+
 }
