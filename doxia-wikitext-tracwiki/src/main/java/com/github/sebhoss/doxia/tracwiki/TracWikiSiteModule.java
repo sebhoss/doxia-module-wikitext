@@ -12,6 +12,8 @@ import org.apache.maven.doxia.module.site.AbstractSiteModule;
 import org.apache.maven.doxia.module.site.SiteModule;
 import org.codehaus.plexus.component.annotations.Component;
 
+import com.github.sebhoss.common.annotation.CompilerWarnings;
+
 /**
  * <p>
  * Doxia site module for TracWiki sources. All sources must be located under the <em>tracwiki</em> folder and have an
@@ -22,7 +24,7 @@ import org.codehaus.plexus.component.annotations.Component;
 public class TracWikiSiteModule extends AbstractSiteModule {
 
     /** Folder prefix for TracWiki sources. */
-    @SuppressWarnings("nls")
+    @SuppressWarnings(CompilerWarnings.NLS)
     public static final String SOURCE_DIRECTORY = "tracwiki";
 
     /** File extension for TracWiki sources. */

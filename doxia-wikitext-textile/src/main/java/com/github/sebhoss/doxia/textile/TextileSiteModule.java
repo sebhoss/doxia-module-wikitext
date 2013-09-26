@@ -12,6 +12,8 @@ import org.apache.maven.doxia.module.site.AbstractSiteModule;
 import org.apache.maven.doxia.module.site.SiteModule;
 import org.codehaus.plexus.component.annotations.Component;
 
+import com.github.sebhoss.common.annotation.CompilerWarnings;
+
 /**
  * <p>
  * Doxia site module for Textile sources. All sources must be located under the <em>textile</em> folder and have an
@@ -22,7 +24,7 @@ import org.codehaus.plexus.component.annotations.Component;
 public class TextileSiteModule extends AbstractSiteModule {
 
     /** Folder prefix for textile sources. */
-    @SuppressWarnings("nls")
+    @SuppressWarnings(CompilerWarnings.NLS)
     public static final String SOURCE_DIRECTORY = "textile";
 
     /** File extension for textile sources. */
