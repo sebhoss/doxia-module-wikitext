@@ -11,17 +11,15 @@ import java.io.Writer;
 
 import javax.annotation.Nullable;
 
+import com.github.sebhoss.common.annotation.CompilerWarnings;
+
 import org.apache.maven.doxia.sink.AbstractTextSink;
 import org.apache.maven.doxia.sink.SinkEventAttributes;
 
-import com.github.sebhoss.common.annotation.CompilerWarnings;
-
 /**
- * Textile generator.
- * 
- * @see <a href="http://www.txstyle.org/">txtstyle.org</a>
+ * Textile Sink.
  */
-@SuppressWarnings({ CompilerWarnings.NLS, CompilerWarnings.NULL })
+@SuppressWarnings({ CompilerWarnings.NLS })
 public class TextileSink extends AbstractTextSink {
 
     private final PrintWriter writer;
@@ -285,7 +283,7 @@ public class TextileSink extends AbstractTextSink {
 
     // Helpers
 
-    private void write(final String text) {
+    private void write(final @Nullable String text) {
         writer.write(unifyEOLs(text));
     }
 
