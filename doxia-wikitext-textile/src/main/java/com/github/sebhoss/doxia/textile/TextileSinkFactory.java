@@ -10,14 +10,17 @@ import java.io.Writer;
 
 import javax.annotation.Nullable;
 
+import com.github.sebhoss.common.annotation.Nullsafe;
+
 import org.apache.maven.doxia.sink.AbstractTextSinkFactory;
 import org.apache.maven.doxia.sink.Sink;
-
-import com.github.sebhoss.common.annotation.Nullsafe;
+import org.apache.maven.doxia.sink.SinkFactory;
+import org.codehaus.plexus.component.annotations.Component;
 
 /**
  * Textile implementation of the Sink factory.
  */
+@Component(role = SinkFactory.class, hint = "textile")
 public class TextileSinkFactory extends AbstractTextSinkFactory {
 
     @Override
