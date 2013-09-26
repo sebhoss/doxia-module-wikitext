@@ -40,6 +40,11 @@
     <module>doxia-wikitext-textile</module>
     <module>doxia-wikitext-tracwiki</module>
     <module>doxia-wikitext-twiki</module>
+    <module>doxia-wikitext-confluence-sample</module>
+    <module>doxia-wikitext-mediawiki-sample</module>
+    <module>doxia-wikitext-textile-sample</module>
+    <module>doxia-wikitext-tracwiki-sample</module>
+    <module>doxia-wikitext-twiki-sample</module>
   </modules>
 
   <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
@@ -92,48 +97,25 @@
         <type>pom</type>
         <scope>import</scope>
       </dependency>
+      <dependency>
+        <groupId>com.github.sebhoss</groupId>
+        <artifactId>sebhoss-bom</artifactId>
+        <version>2.0.1</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+
+      <dependency>
+        <groupId>com.github.sebhoss</groupId>
+        <artifactId>doxia-wikitext-common</artifactId>
+        <version>${project.version}</version>
+      </dependency>
     </dependencies>
   </dependencyManagement>
   <dependencies>
-	<dependency>
-      <groupId>org.fusesource.wikitext</groupId>
-      <artifactId>wikitext-core</artifactId>
-    </dependency>
     <dependency>
-      <groupId>org.fusesource.wikitext</groupId>
-      <artifactId>textile-core</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>com.google.guava</groupId>
-      <artifactId>guava</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.maven.doxia</groupId>
-      <artifactId>doxia-core</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.maven.doxia</groupId>
-      <artifactId>doxia-sink-api</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.codehaus.plexus</groupId>
-      <artifactId>plexus-component-annotations</artifactId>
-      <version>1.5.5</version>
-    </dependency>
-    <dependency>
-      <groupId>javax.inject</groupId>
-      <artifactId>javax.inject</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.maven.doxia</groupId>
-      <artifactId>doxia-core</artifactId>
-      <type>test-jar</type>
-      <scope>test</scope>
+      <groupId>com.github.sebhoss</groupId>
+      <artifactId>common-annotations</artifactId>
     </dependency>
   </dependencies>
 
