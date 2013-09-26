@@ -4,20 +4,24 @@
  * terms of the Do What The Fuck You Want To Public License, Version 2,
  * as published by Sam Hocevar. See http://www.wtfpl.net/ for more details.
  */
-package com.github.sebhoss.doxia;
+package com.github.sebhoss.doxia.textile;
 
 import java.io.PrintWriter;
 import java.io.Writer;
 
+import javax.annotation.Nullable;
+
 import org.apache.maven.doxia.sink.AbstractTextSink;
 import org.apache.maven.doxia.sink.SinkEventAttributes;
+
+import com.github.sebhoss.common.annotation.CompilerWarnings;
 
 /**
  * Textile generator.
  * 
  * @see <a href="http://www.txstyle.org/">txtstyle.org</a>
  */
-@SuppressWarnings("nls")
+@SuppressWarnings({ CompilerWarnings.NLS, CompilerWarnings.NULL })
 public class TextileSink extends AbstractTextSink {
 
     private final PrintWriter writer;
@@ -93,7 +97,7 @@ public class TextileSink extends AbstractTextSink {
     }
 
     @Override
-    public void comment(final String comment) {
+    public void comment(final @Nullable String comment) {
         write("###. " + comment + EOL);
     }
 
@@ -173,12 +177,12 @@ public class TextileSink extends AbstractTextSink {
     // Links and Images
 
     @Override
-    public void link(final String name) {
+    public void link(final @Nullable String name) {
         write("\"" + name + "\":" + name);
     }
 
     @Override
-    public void anchor(final String name) {
+    public void anchor(final @Nullable String name) {
         write("\"" + name + "\":" + name);
     }
 
@@ -203,7 +207,7 @@ public class TextileSink extends AbstractTextSink {
     }
 
     @Override
-    public void figureGraphics(final String name) {
+    public void figureGraphics(final @Nullable String name) {
         write(name);
     }
 
@@ -247,12 +251,12 @@ public class TextileSink extends AbstractTextSink {
     // Basics
 
     @Override
-    public void text(final String text) {
+    public void text(final @Nullable String text) {
         write(text);
     }
 
     @Override
-    public void rawText(final String text) {
+    public void rawText(final @Nullable String text) {
         write("notextile. " + text);
     }
 
@@ -262,7 +266,8 @@ public class TextileSink extends AbstractTextSink {
     }
 
     @Override
-    public void unknown(final String name, final Object[] requiredParams, final SinkEventAttributes attributes) {
+    public void unknown(final @Nullable String name, final @Nullable Object[] requiredParams,
+            final @Nullable SinkEventAttributes attributes) {
         getLog().warn("[Textile Sink] Unknown Sink event: '" + name + "', ignoring!");
     }
 

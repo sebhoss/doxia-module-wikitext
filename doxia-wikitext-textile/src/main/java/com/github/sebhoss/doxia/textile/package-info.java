@@ -6,8 +6,7 @@
  */
 /**
  * This package contains all Textile related Doxia files.
- *
- * @see     <a href="https://github.com/sebhoss/doxia-module-textile">https://github.com/sebhoss/doxia-module-textile</a>
  */
-package com.github.sebhoss.doxia;
+@com.github.sebhoss.common.annotation.NotNullByDefault
+package com.github.sebhoss.doxia.textile;
 

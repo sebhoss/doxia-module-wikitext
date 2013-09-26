@@ -4,7 +4,7 @@
  * terms of the Do What The Fuck You Want To Public License, Version 2,
  * as published by Sam Hocevar. See http://www.wtfpl.net/ for more details.
  */
-package com.github.sebhoss.doxia;
+package com.github.sebhoss.doxia.textile;
 
 import java.io.StringWriter;
 
@@ -14,15 +14,16 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.github.sebhoss.common.annotation.CompilerWarnings;
+
 /**
  * Test cases for the {@link TextileSink}.
  */
-@SuppressWarnings("nls")
+@SuppressWarnings({ CompilerWarnings.JAVADOC, CompilerWarnings.NLS, CompilerWarnings.NULL })
 public class TextileSinkTest {
 
     private StringWriter writer;
 
-    @SuppressWarnings("javadoc")
     @Before
     public void setUp() {
         writer = new StringWriter();
