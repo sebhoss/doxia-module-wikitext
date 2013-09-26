@@ -31,6 +31,18 @@
   <description>Doxia modules based on Mylyn/Wikitext</description>
 
   <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+  <!--                                 MODULES                                 -->
+  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+  <modules>
+    <module>doxia-wikitext-common</module>
+    <module>doxia-wikitext-confluence</module>
+    <module>doxia-wikitext-mediawiki</module>
+    <module>doxia-wikitext-textile</module>
+    <module>doxia-wikitext-tracwiki</module>
+    <module>doxia-wikitext-twiki</module>
+  </modules>
+
+  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
   <!--                                  SOURCE                                 -->
   <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
   <scm>
@@ -141,5 +153,4 @@
       </plugin>
     </plugins>
   </build>
-
 </project>
