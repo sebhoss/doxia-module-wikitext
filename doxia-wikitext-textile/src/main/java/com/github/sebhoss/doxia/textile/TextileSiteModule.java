@@ -8,11 +8,11 @@ package com.github.sebhoss.doxia.textile;
 
 import javax.inject.Inject;
 
+import com.github.sebhoss.common.annotation.CompilerWarnings;
+
 import org.apache.maven.doxia.module.site.AbstractSiteModule;
 import org.apache.maven.doxia.module.site.SiteModule;
 import org.codehaus.plexus.component.annotations.Component;
-
-import com.github.sebhoss.common.annotation.CompilerWarnings;
 
 /**
  * <p>
