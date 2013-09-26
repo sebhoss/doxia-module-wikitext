@@ -9,18 +9,16 @@ package com.github.sebhoss.doxia;
 import java.io.IOException;
 import java.io.Reader;
 
-import javax.annotation.Nullable;
+import com.github.sebhoss.common.annotation.CompilerWarnings;
+import com.github.sebhoss.common.annotation.Nullsafe;
+import com.google.common.base.Preconditions;
+import com.google.common.io.CharStreams;
 
 import org.apache.maven.doxia.parser.AbstractTextParser;
 import org.apache.maven.doxia.parser.ParseException;
 import org.apache.maven.doxia.sink.Sink;
 import org.eclipse.mylyn.wikitext.core.parser.MarkupParser;
 import org.eclipse.mylyn.wikitext.core.parser.markup.MarkupLanguage;
-
-import com.github.sebhoss.common.annotation.CompilerWarnings;
-import com.github.sebhoss.common.annotation.Nullsafe;
-import com.google.common.base.Preconditions;
-import com.google.common.io.CharStreams;
 
 /**
  * Doxia parser based on Wikitext.
@@ -29,7 +27,8 @@ import com.google.common.io.CharStreams;
 public abstract class WikitextParser extends AbstractTextParser {
 
     @Override
-    public void parse(final @Nullable Reader reader, final @Nullable Sink sink) throws ParseException {
+    @SuppressWarnings(CompilerWarnings.NULL)
+    public void parse(final Reader reader, final Sink sink) throws ParseException {
         Preconditions.checkNotNull(reader, "Cannot read from NULL reader");
         Preconditions.checkNotNull(sink, "Cannot write into NULL sink");
 
