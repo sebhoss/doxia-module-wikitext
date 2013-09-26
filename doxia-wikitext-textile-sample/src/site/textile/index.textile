@@ -1,0 +1,69 @@
+h1. Textile Example Site
+
+p. "Textile":http://www.txstyle.org/ is a lightweight markup language. It is supported on "GitHub":https://github.com/ (e.g. @README.textile@, comments, issues, etc), as well as "Jekyll":http://jekyllrb.com/, "Mylyn":http://www.eclipse.org/mylyn/ and others.
+
+p. This document is written in Textile and the following examples show the features of Textile.
+
+h2. Examples
+
+p. You can use numeric lists
+
+# with some
+# items
+
+p. and of course also bullet lists
+
+* like
+* this.
+
+p. or a mixture between the two
+
+* This is a bullet
+*# this is the start of an enumerated list within a bulleted list
+*# this is another item list of an enumerated list within a bulleted list
+**# this is another level of an enumerated list within a bulleted list
+* This is another bullet
+
+p. It is possible to create tables
+
+|_. Header1 |_. Header2 |_. Header3 |
+| Cell 1 | Cell 2 | Cell 3 |
+| Cell 1 | Cell 2 | Cell 3 |
+
+p. You can @inline some code@, but also create a block quote
+
+bc.. public class Textile {
+
+    public static final String MESSAGE = "Textile is awesome!"
+
+}
+
+p. It is possible to __emphasize__ text, as well as *strongly emphasize* it.
+
+p. You can use different level of headings
+
+h1. An HTML first-level heading
+
+h2. An HTML second-level heading
+
+h3. An HTML third-level heading
+
+h4. An HTML fourth-level heading
+
+h5. An HTML fifth-level heading
+
+h6. An HTML sixth-level heading
+
+p. or blockquotes
+
+bq. This text will be enclosed in an HTML blockquote element.
+
+p. and footnotes:
+
+Text with a link to some reference[1]
+
+fn1. Footnote explanation
+
+h2. Reference
+
+p. See the "reference documentation":http://www.txstyle.org/ for more details and examples.
