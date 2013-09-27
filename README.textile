@@ -1,4 +1,4 @@
-h1. Doxia Textile Module "!https://secure.travis-ci.org/sebhoss/doxia-module-textile.png!":http://travis-ci.org/sebhoss/doxia-module-textile "!https://www.ohloh.net/p/doxia-module-textile/widgets/project_thin_badge.gif!":https://www.ohloh.net/p/doxia-module-textile/
+h1. Doxia Textile Module "!https://secure.travis-ci.org/sebhoss/doxia-module-wikitext.png!":http://travis-ci.org/sebhoss/doxia-module-wikitext "!https://www.ohloh.net/p/doxia-module-textile/widgets/project_thin_badge.gif!":https://www.ohloh.net/p/doxia-module-textile/
 
 p. This "Doxia":http://maven.apache.org/doxia/ module enables you to write documentation using the "Textile":http://txstyle.org/ syntax. It is based on the "Mylyn/WikiText":http://wiki.eclipse.org/Mylyn/WikiText project which also provides a nice editor with syntax completion, folding, validation, outline view and a preview of what the HTML output looks like.
 
