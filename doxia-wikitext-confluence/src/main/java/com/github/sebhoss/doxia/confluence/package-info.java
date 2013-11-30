@@ -7,6 +7,6 @@
 /**
  * This package contains all Confluence related Doxia files.
  */
-@com.github.sebhoss.common.annotation.NotNullByDefault
+@javax.annotation.ParametersAreNonnullByDefault
 package com.github.sebhoss.doxia.confluence;
 

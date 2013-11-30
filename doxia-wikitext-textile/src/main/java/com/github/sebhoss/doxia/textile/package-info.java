@@ -9,6 +9,6 @@
  * 
  * @see <a href="http://www.txstyle.org/">txtstyle.org</a>
  */
-@com.github.sebhoss.common.annotation.NotNullByDefault
+@javax.annotation.ParametersAreNonnullByDefault
 package com.github.sebhoss.doxia.textile;
 
