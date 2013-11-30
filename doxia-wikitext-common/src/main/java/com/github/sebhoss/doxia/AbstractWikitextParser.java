@@ -9,7 +9,10 @@ package com.github.sebhoss.doxia;
 import java.io.IOException;
 import java.io.Reader;
 
+import javax.annotation.Nullable;
+
 import com.github.sebhoss.common.annotation.CompilerWarnings;
+import com.github.sebhoss.common.annotation.Nullsafe;
 import com.google.common.base.Preconditions;
 import com.google.common.io.CharStreams;
 
@@ -26,33 +29,29 @@ import org.eclipse.mylyn.wikitext.core.parser.markup.MarkupLanguage;
 public abstract class AbstractWikitextParser extends AbstractTextParser {
 
     @Override
-    @SuppressWarnings(CompilerWarnings.NULL)
-    public void parse(final Reader reader, final Sink sink) throws ParseException {
-        Preconditions.checkNotNull(reader, "Cannot read from NULL reader");
-        Preconditions.checkNotNull(sink, "Cannot write into NULL sink");
-
-        final String markupContent = AbstractWikitextParser.readMarkupContent(reader);
+    public void parse(final @Nullable Reader reader, final @Nullable Sink sink) throws ParseException {
+        final String markupContent = readMarkupContent(Nullsafe.nullsafe(reader));
         final String htmlContent = parseToHtml(markupContent);
 
-        sink.rawText(htmlContent);
-        sink.flush();
-        sink.close();
+        final Sink nullsafeSink = Nullsafe.nullsafe(sink);
+        nullsafeSink.rawText(htmlContent);
+        nullsafeSink.flush();
+        nullsafeSink.close();
     }
 
     private static String readMarkupContent(final Reader reader) throws ParseException {
         try (Reader autoClosedReader = reader) {
-            return Preconditions.checkNotNull(CharStreams.toString(autoClosedReader));
+            return CharStreams.toString(Nullsafe.nullsafe(autoClosedReader));
         } catch (final IOException exception) {
             throw new ParseException("Cannot read input", exception);
         }
     }
 
-    @SuppressWarnings(CompilerWarnings.NULL)
     private String parseToHtml(final String markupContent) {
         Preconditions.checkNotNull(markupContent, "Cannot parse NULL Textile content to HTML!");
         Preconditions.checkArgument(!markupContent.isEmpty(), "Cannot parse empty Textile content to HTML!");
 
-        return createMarkupParser().parseToHtml(markupContent);
+        return Nullsafe.nullsafe(createMarkupParser().parseToHtml(markupContent));
     }
 
     private MarkupParser createMarkupParser() {
