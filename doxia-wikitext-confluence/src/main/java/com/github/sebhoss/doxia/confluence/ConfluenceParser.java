@@ -11,13 +11,13 @@ import org.codehaus.plexus.component.annotations.Component;
 import org.eclipse.mylyn.wikitext.confluence.core.ConfluenceLanguage;
 import org.eclipse.mylyn.wikitext.core.parser.markup.MarkupLanguage;
 
-import com.github.sebhoss.doxia.WikitextParser;
+import com.github.sebhoss.doxia.AbstractWikitextParser;
 
 /**
  * Doxia parser for Confluence documents.
  */
 @Component(role = Parser.class, hint = "confluence")
-public class ConfluenceParser extends WikitextParser {
+public class ConfluenceParser extends AbstractWikitextParser {
 
     @Override
     protected MarkupLanguage createMarkupLanguage() {

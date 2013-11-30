@@ -11,13 +11,13 @@ import org.codehaus.plexus.component.annotations.Component;
 import org.eclipse.mylyn.wikitext.core.parser.markup.MarkupLanguage;
 import org.eclipse.mylyn.wikitext.mediawiki.core.MediaWikiLanguage;
 
-import com.github.sebhoss.doxia.WikitextParser;
+import com.github.sebhoss.doxia.AbstractWikitextParser;
 
 /**
  * Doxia parser for MediaWiki documents.
  */
 @Component(role = Parser.class, hint = "mediawiki")
-public class MediaWikiParser extends WikitextParser {
+public class MediaWikiParser extends AbstractWikitextParser {
 
     @Override
     protected MarkupLanguage createMarkupLanguage() {

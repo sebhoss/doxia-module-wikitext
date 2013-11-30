@@ -11,13 +11,13 @@ import org.codehaus.plexus.component.annotations.Component;
 import org.eclipse.mylyn.wikitext.core.parser.markup.MarkupLanguage;
 import org.eclipse.mylyn.wikitext.twiki.core.TWikiLanguage;
 
-import com.github.sebhoss.doxia.WikitextParser;
+import com.github.sebhoss.doxia.AbstractWikitextParser;
 
 /**
  * Doxia parser for Textile documents.
  */
 @Component(role = Parser.class, hint = "twiki")
-public class TWikiParser extends WikitextParser {
+public class TWikiParser extends AbstractWikitextParser {
 
     @Override
     protected MarkupLanguage createMarkupLanguage() {
