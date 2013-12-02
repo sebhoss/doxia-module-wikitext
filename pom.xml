@@ -31,23 +31,6 @@
   <description>Doxia modules based on Mylyn/Wikitext</description>
 
   <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-  <!--                                 MODULES                                 -->
-  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-  <modules>
-    <module>doxia-wikitext-common</module>
-    <module>doxia-wikitext-confluence</module>
-    <module>doxia-wikitext-mediawiki</module>
-    <module>doxia-wikitext-textile</module>
-    <module>doxia-wikitext-tracwiki</module>
-    <module>doxia-wikitext-twiki</module>
-    <module>doxia-wikitext-confluence-sample</module>
-    <module>doxia-wikitext-mediawiki-sample</module>
-    <module>doxia-wikitext-textile-sample</module>
-    <module>doxia-wikitext-tracwiki-sample</module>
-    <module>doxia-wikitext-twiki-sample</module>
-  </modules>
-
-  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
   <!--                                  SOURCE                                 -->
   <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
   <scm>
@@ -56,12 +39,20 @@
     <tag>master</tag>
     <url>${project.url}</url>
   </scm>
-  
+
+  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+  <!--                                 MODULES                                 -->
+  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+  <modules>
+    <module>doxia-wikitext-languages</module>
+    <module>doxia-wikitext-samples</module>
+  </modules>
+
   <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
   <!--                                PROPERTIES                               -->
   <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
   <properties>
-    <version.bom>2.0.5</version.bom>
+    <version.bom>2.0.6-SNAPSHOT</version.bom>
   </properties>
 
   <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
@@ -119,10 +110,4 @@
       </dependency>
     </dependencies>
   </dependencyManagement>
-  <dependencies>
-    <dependency>
-      <groupId>com.github.sebhoss</groupId>
-      <artifactId>common-annotations</artifactId>
-    </dependency>
-  </dependencies>
 </project>
