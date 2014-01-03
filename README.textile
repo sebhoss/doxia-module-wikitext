@@ -1,10 +1,10 @@
-h1. Doxia Textile Module "!https://secure.travis-ci.org/sebhoss/doxia-module-wikitext.png!":http://travis-ci.org/sebhoss/doxia-module-wikitext "!https://www.ohloh.net/p/doxia-module-textile/widgets/project_thin_badge.gif!":https://www.ohloh.net/p/doxia-module-textile/
+h1. Doxia WikiText Modules "!https://secure.travis-ci.org/sebhoss/doxia-module-wikitext.png!":http://travis-ci.org/sebhoss/doxia-module-wikitext "!https://www.ohloh.net/p/doxia-module-wikitext/widgets/project_thin_badge.gif!":https://www.ohloh.net/p/doxia-module-wikitext/
 
-p. This "Doxia":http://maven.apache.org/doxia/ module enables you to write documentation using the "Textile":http://txstyle.org/ syntax. It is based on the "Mylyn/WikiText":http://wiki.eclipse.org/Mylyn/WikiText project which also provides a nice editor with syntax completion, folding, validation, outline view and a preview of what the HTML output looks like.
+p. This collection of "Doxia":http://maven.apache.org/doxia/ modules enables you to write documentation using one of the languages supported by "Mylyn/Wikitext":http://wiki.eclipse.org/Mylyn/WikiText.
 
 h2. Usage
 
-p. Simply reference this module as a dependency to the maven-site-plugin inside your POM:
+p. Simply reference one of the modules as a dependency to the maven-site-plugin inside your POM:
 
 bc. 
 <plugin>
@@ -12,14 +12,25 @@ bc.
   <artifactId>maven-site-plugin</artifactId>
   <dependencies>
     <dependency>
-      <groupId>com.github.sebhoss</groupId>
-      <artifactId>doxia-module-textile</artifactId>
-      <version>1.1.0</version>
+      <groupId>com.github.sebhoss.doxia</groupId>
+      <artifactId>doxia-module-${language}</artifactId>
+      <version>${version.wikitext}</version>
     </dependency>
   </dependencies>
 </plugin>
 
-p. All Textile source documents with the file extension *textile* living under *src/site/textile/* will be parsed and converted to HTML. Have a look at the "example project":https://github.com/sebhoss/doxia-textile-sample.
+p. Replace *${language}* with the desired language/module and *${version.wikitext}* with the "latest release":http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22com.github.sebhoss.doxia%22.
+
+p. All source documents with the file extension *LANGUAGE* living under *src/site/LANGUAGE/* will be parsed and converted to HTML. Supported languages are:
+
+
+|_. Language |_. Example |
+| "Confluence":https://confluence.atlassian.com/display/DOC/Confluence+Wiki+Markup | "✓":https://github.com/sebhoss/doxia-module-wikitext/tree/master/doxia-wikitext-samples/doxia-wikitext-confluence-sample |
+| "Mediawiki":http://www.mediawiki.org/wiki/Help:Formatting | "✓":https://github.com/sebhoss/doxia-module-wikitext/tree/master/doxia-wikitext-samples/doxia-wikitext-mediawiki-sample |
+| "Textile":http://txstyle.org/ | "✓":https://github.com/sebhoss/doxia-module-wikitext/tree/master/doxia-wikitext-samples/doxia-wikitext-textile-sample |
+| "Tracwiki":http://trac.edgewall.org/wiki/WikiFormatting | "✓":https://github.com/sebhoss/doxia-module-wikitext/tree/master/doxia-wikitext-samples/doxia-wikitext-tracwiki-sample |
+| "TWiki":http://twiki.org/cgi-bin/view/TWiki/TextFormattingRules | "✓":https://github.com/sebhoss/doxia-module-wikitext/tree/master/doxia-wikitext-samples/doxia-wikitext-twiki-sample |
+
 
 h2. Development
 
