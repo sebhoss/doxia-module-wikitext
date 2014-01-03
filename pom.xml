@@ -22,6 +22,7 @@
   <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
   <!--                               INFORMATIONS                              -->
   <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+  <groupId>com.github.sebhoss.doxia</groupId>
   <artifactId>doxia-module-wikitext</artifactId>
   <version>2.0.0-SNAPSHOT</version>
   <packaging>pom</packaging>
@@ -104,7 +105,7 @@
       </dependency>
 
       <dependency>
-        <groupId>com.github.sebhoss</groupId>
+        <groupId>com.github.sebhoss.doxia</groupId>
         <artifactId>doxia-wikitext-common</artifactId>
         <version>${project.version}</version>
       </dependency>
