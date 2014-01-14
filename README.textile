@@ -13,7 +13,7 @@ bc.
   <dependencies>
     <dependency>
       <groupId>com.github.sebhoss.doxia</groupId>
-      <artifactId>doxia-module-${language}</artifactId>
+      <artifactId>doxia-wikitext-${language}</artifactId>
       <version>${version.wikitext}</version>
     </dependency>
   </dependencies>
