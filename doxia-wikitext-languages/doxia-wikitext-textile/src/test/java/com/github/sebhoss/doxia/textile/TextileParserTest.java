@@ -77,4 +77,16 @@ public class TextileParserTest {
         Assert.assertEquals("close", sink.getEventList().get(2).getName());
     }
 
+    @Test
+    public void shouldNotOutputDoublePreTagsForSingleBlockCodeElement() throws ParseException {
+        // given
+        final StringReader reader = new StringReader("bc. \\alert(1);");
+
+        // when
+        parser.parse(reader, sink);
+
+        // then
+        Assert.assertFalse(sink.getEventList().get(0).getArgs()[0].toString().contains("<pre><pre>"));
+    }
+
 }
