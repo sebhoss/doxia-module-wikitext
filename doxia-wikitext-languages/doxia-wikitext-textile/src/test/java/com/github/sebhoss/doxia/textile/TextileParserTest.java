@@ -20,7 +20,7 @@ import org.junit.Test;
 /**
  * Test cases for the {@link TextileParser}.
  */
-@SuppressWarnings({ CompilerWarnings.JAVADOC, CompilerWarnings.NLS, CompilerWarnings.NULL })
+@SuppressWarnings({ CompilerWarnings.JAVADOC, CompilerWarnings.NLS })
 public class TextileParserTest {
 
     private SinkEventTestingSink sink;
